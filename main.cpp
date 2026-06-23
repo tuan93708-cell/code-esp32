@@ -3,7 +3,7 @@
 #include <WebServer.h>
 #include <ESP32Servo.h>
 #include <time.h>
-//
+
 
 //======================================================
 // WIFI
@@ -1516,6 +1516,10 @@ void setup()
   Serial.println("WIFI CONNECTED");
   Serial.print("IP: ");
   Serial.println(WiFi.localIP());
+
+  // Cấu hình đồng bộ thời gian từ Internet (Múi giờ Việt Nam: UTC+7)
+  configTime(7 * 3600, 0, "pool.ntp.org", "time.nist.gov");
+  Serial.println("Da dong bo thoi gian thuc qua NTP");
 
 
   // WEB PAGE
